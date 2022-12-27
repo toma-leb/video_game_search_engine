@@ -21,7 +21,7 @@ public class GameController {
     }
 
     @GetMapping("/api/games")
-    public ArrayList<Object> getGames(@RequestParam(name = "query") String query) throws IOException {
+    public ArrayList<Object> getGames(@RequestParam(name = "query") String query) throws Exception {
         ArrayList<Object> list = new ArrayList<>();
         SearchRequest searchRequest = new SearchRequest()
             .source(SearchSourceBuilder.searchSource().query(new QueryStringQueryBuilder(query)));
